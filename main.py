@@ -16,7 +16,7 @@ class YouTubeDownloaderApp:
 
         # Fenstergröße und Position setzen
         window_width = 320
-        window_height = 320
+        window_height = 360
         screen_width = self.root.winfo_screenwidth()
         screen_height = self.root.winfo_screenheight()
         x_position = screen_width - window_width - 10  # 10 Pixel Abstand vom rechten Bildschirmrand
@@ -58,6 +58,11 @@ class YouTubeDownloaderApp:
         self.mp3_button = tk.Button(self.button_frame, text="MP3", command=lambda: self.select_format('mp3'), width=10,
                                     height=2, font=("Helvetica", 10), bg="#FFFFFF", fg="#000000")
         self.mp3_button.grid(row=0, column=1, padx=5, sticky="w")
+
+        # Ignorieren Button
+        self.ignore_button = tk.Button(self.button_frame, text="Ignorieren", command=self.hide_window, width=10,
+                                    height=2, font=("Helvetica", 10), bg="#FFFFFF", fg="#000000")
+        self.ignore_button.grid(row=0, column=2, padx=5, sticky="w")
 
         self.root.withdraw()  # Fenster verstecken
 
